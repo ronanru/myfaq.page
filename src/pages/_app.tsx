@@ -12,6 +12,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
   return (
     <SessionProvider session={session}>
       <Head>
+        <meta name="og:type" content="website" />
         <link rel="icon" href="/logo.png" type="image/png" />
       </Head>
       <Component {...pageProps} />

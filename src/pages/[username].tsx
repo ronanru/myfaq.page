@@ -44,18 +44,29 @@ const FAQPage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
-        <title>{`${page.name}'s Frequently Asked Questions`}</title>
+        <title>{`${page.name}'s Frequently Asked Questions Page`}</title>
+        <meta name="og:title" content={`${page.name}'s Frequently Asked Questions Page`} />
         <meta
           name="description"
           content={`Find answers to questions ${page.name} gets the most often. Powered by My FAQ Page`}
         />
+        <meta
+          name="og:description"
+          content={`Find answers to questions ${page.name} gets the most often. Powered by My FAQ Page`}
+        />
         {page.name && page.image && (
-          <meta
-            name="og:image"
-            content={`/api/og?theme=${page.theme}&name=${encodeURIComponent(
-              page.name
-            )}&image=${encodeURIComponent(page.image)}`}
-          />
+          <>
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta
+              name="og:image"
+              content={`/api/og?theme=${page.theme}&name=${encodeURIComponent(
+                page.name
+              )}&image=${encodeURIComponent(page.image)}`}
+            />
+            <meta property="og:image:type" content="image/png" />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
+          </>
         )}
       </Head>
       <div className={`flex flex-1 flex-col ${classes[page.theme]}`}>

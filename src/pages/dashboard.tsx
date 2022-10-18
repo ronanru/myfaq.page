@@ -62,7 +62,9 @@ const Dashboard: NextPage = () => {
       <AuthGuard center={!settings.data || !settings.data.username}>
         <Head>
           <title>Dashboard | My FAQ Page</title>
+          <meta name="og:title" content="Dashboard | My FAQ Page" />
           <meta name="description" content="Set up your own FAQ page" />
+          <meta name="og:description" content="Set up your own FAQ page" />
         </Head>
         {settings.isLoading || questions.isLoading ? (
           <Loading></Loading>
