@@ -46,6 +46,7 @@ const Home: NextPage = () => {
           <Head>
             <title>My FAQ Page - Answer all questions with one link</title>
             <meta name="description" content="Create a beautiful FAQ page in under 5 minutes." />
+            <meta name="og:image" content="/og.png" />
           </Head>
           <HeroSection onSignIn={() => setIsSignInModalOpen(true)}></HeroSection>
           <AboutSection></AboutSection>

@@ -24,7 +24,7 @@ export const userRouter = router({
         .object({
           isBoxed: z.boolean(),
           isNumbered: z.boolean(),
-          theme: z.number().int().positive().max(5)
+          theme: z.number().int().nonnegative().max(5)
         })
         .strict()
     )
