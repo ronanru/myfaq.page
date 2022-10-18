@@ -72,7 +72,7 @@ const FAQPage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
           {page.questions.map(({ answer, text }, i) => (
             <Question
               key={i}
-              answer={answer}
+              answer={answer as Record<string, unknown>}
               text={`${page.isNumbered ? `${i + 1}. ` : ''}${text}`}
               theme={page.theme}
               isBoxed={page.isBoxed}></Question>
