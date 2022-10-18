@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  * {
+    @apply focus-visible:focus-outline;
+  }
+
+  :root {
+    accent-color: theme('colors.indigo.600');
+  }
+
+  ::selection {
+    @apply bg-indigo-600 bg-opacity-25;
+  }
+
+  #__next {
+    @apply flex min-h-screen flex-col gap-8 overflow-x-hidden text-neutral-800;
+  }
+
+  code {
+    @apply font-code mx-1 rounded border border-neutral-400 bg-white bg-opacity-50 p-1;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply flex items-center gap-2 rounded-full bg-indigo-600 py-4 px-8 text-white shadow transition-opacity hover:bg-opacity-95;
+  }
+}
+
+@layer utilities {
+  .outline-none {
+    outline-color: transparent;
+  }
+
+  .focus-outline {
+    @apply outline-offset-4 outline-indigo-600;
+  }
+
+  .font-code {
+    font-family: 'Cascadia Code', 'Fira Code', 'Source Code Pro', 'JetBrains Mono', 'Hack Font',
+      'Fira Mono', 'Ubuntu Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      'Liberation Mono', 'Courier New', monospace;
+  }
+}
+
+.ProseMirror-focused {
+  @apply outline-none;
+}
+
+.ProseMirror a {
+  @apply text-indigo-600 underline;
+}
