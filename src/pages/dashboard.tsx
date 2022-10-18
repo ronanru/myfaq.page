@@ -659,9 +659,9 @@ const Dashboard: NextPage = () => {
     const setUsername = trpc.user.setUsername.useMutation({ onSettled: onUsernameChange });
     return (
       <>
-        <h1 className="text-4xl font-bold text-black">Claim your page!</h1>
+        <h1 className="text-center text-4xl font-bold text-black">Claim your page!</h1>
         <form
-          className="flex gap-2"
+          className="flex flex-col gap-2 md:flex-row"
           onSubmit={e => {
             e.preventDefault();
             if (setUsername.isLoading) return;

@@ -41,7 +41,7 @@
 
 @layer components {
   .btn {
-    @apply flex items-center gap-2 rounded-full bg-indigo-600 py-4 px-8 text-white shadow transition-opacity hover:bg-opacity-95;
+    @apply flex items-center justify-center gap-2 rounded-full bg-indigo-600 py-4 px-8 text-white shadow transition-opacity hover:bg-opacity-95;
   }
 }
 

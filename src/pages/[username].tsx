@@ -61,6 +61,7 @@ const FAQPage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <div className={`flex flex-1 flex-col ${classes[page.theme]}`}>
         <header className="container flex items-center gap-2 p-4">
           <Image
+            className="rounded-md"
             alt={`${page.name}'s profile picture`}
             src={page.image as string}
             width={50}
