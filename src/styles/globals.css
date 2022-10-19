@@ -5,7 +5,7 @@
 @layer base {
   @media (prefers-reduced-motion: reduce) {
     html:focus-within {
-      scroll-behavior: auto;
+      @apply scroll-auto;
     }
 
     *,
@@ -19,11 +19,16 @@
   }
 
   * {
-    @apply focus-visible:focus-outline;
+    @apply outline-offset-2 outline-indigo-600 transition-[outline-offset];
   }
 
-  :root {
+  *:not(:active):focus-visible {
+    @apply outline-offset-4;
+  }
+
+  html {
     accent-color: theme('colors.indigo.600');
+    @apply scroll-smooth;
   }
 
   ::selection {
@@ -31,7 +36,7 @@
   }
 
   #__next {
-    @apply flex min-h-screen flex-col gap-8 overflow-x-hidden text-neutral-800;
+    @apply flex min-h-screen flex-col gap-8 overflow-x-hidden scroll-smooth text-neutral-800;
   }
 
   code {
@@ -48,10 +53,6 @@
 @layer utilities {
   .outline-none {
     outline-color: transparent;
-  }
-
-  .focus-outline {
-    @apply outline-offset-4 outline-indigo-600;
   }
 
   .font-code {

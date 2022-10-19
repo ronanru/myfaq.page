@@ -254,7 +254,10 @@ const Dashboard: NextPage = () => {
                 height={75}></Image>
               <p className="flex items-center gap-1 text-2xl text-black">
                 {name}
-                <button title="Edit Name" onClick={() => setIsChangeNameModalOpen(true)}>
+                <button
+                  className="rounded-full"
+                  title="Edit Name"
+                  onClick={() => setIsChangeNameModalOpen(true)}>
                   <PencilIcon className="h-5 w-5"></PencilIcon>
                 </button>
               </p>

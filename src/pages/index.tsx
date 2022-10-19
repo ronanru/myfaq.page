@@ -85,7 +85,7 @@ const Home: NextPage = () => {
                 Claim my page
               </button>
             )}
-            <a className="text-black underline" href="#demo">
+            <a className="rounded-md text-black underline" href="#demo">
               See the demo
             </a>
           </div>

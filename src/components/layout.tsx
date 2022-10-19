@@ -14,15 +14,21 @@ const Layout: React.FC<{ children: React.ReactNode; center: boolean; onSignIn?: 
     <>
       <header className="container flex items-center justify-between p-4">
         <Link href="/">
-          <a className="text-2xl font-bold"> My FAQ Page</a>
+          <a className="rounded-md text-2xl font-bold"> My FAQ Page</a>
         </Link>
         {router.pathname === '/' ? (
           <>
             {session.status === 'unauthenticated' && <button onClick={onSignIn}>Sign In</button>}
-            {session.status === 'authenticated' && <Link href="/dashboard">Dashboard</Link>}
+            {session.status === 'authenticated' && (
+              <Link href="/dashboard">
+                <a className="rounded">Dashboard</a>
+              </Link>
+            )}
           </>
         ) : (
-          <Link href="/">Home</Link>
+          <Link href="/">
+            <a className="rounded">Home</a>
+          </Link>
         )}
       </header>
       <main
@@ -36,7 +42,7 @@ const Layout: React.FC<{ children: React.ReactNode; center: boolean; onSignIn?: 
         <p>
           Developed by{' '}
           <a
-            className="text-black underline"
+            className="rounded text-black underline"
             href="https://roananru.com"
             target="_blank"
             rel="noopener noreferrer">
