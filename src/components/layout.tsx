@@ -43,7 +43,7 @@ const Layout: React.FC<{ children: React.ReactNode; center: boolean; onSignIn?: 
           Developed by{' '}
           <a
             className="rounded text-black underline"
-            href="https://roananru.com"
+            href="https://ronanru.com"
             target="_blank"
             rel="noopener noreferrer">
             Ronan
