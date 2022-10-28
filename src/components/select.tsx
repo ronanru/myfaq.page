@@ -1,6 +1,5 @@
-import { Listbox, Transition } from '@headlessui/react';
+import { Listbox } from '@headlessui/react';
 import { ChevronUpDownIcon } from '@heroicons/react/24/outline';
-import { Fragment } from 'react';
 
 interface Item {
   value: string | number;
@@ -28,28 +27,26 @@ const Select: React.FC<{
             </>
           )}
         </Listbox.Button>
-        <Transition as={Fragment}>
-          <Listbox.Options className="absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-lg bg-neutral-100 p-1 text-base shadow">
-            {items.map(item => (
-              <Listbox.Option
-                key={item.value}
-                className={({ active }) =>
-                  `relative cursor-default select-none rounded-md  py-2 px-4 ${
-                    active ? 'bg-indigo-100 text-black' : ''
-                  }`
-                }
-                value={item}>
-                {({ selected }) => (
-                  <>
-                    <span className={`block truncate ${selected ? 'font-bold' : ''}`}>
-                      {item.name}
-                    </span>
-                  </>
-                )}
-              </Listbox.Option>
-            ))}
-          </Listbox.Options>
-        </Transition>
+        <Listbox.Options className="absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-lg bg-neutral-100 p-1 text-base shadow">
+          {items.map(item => (
+            <Listbox.Option
+              key={item.value}
+              className={({ active }) =>
+                `relative cursor-default select-none rounded-md  py-2 px-4 ${
+                  active ? 'bg-indigo-100 text-black' : ''
+                }`
+              }
+              value={item}>
+              {({ selected }) => (
+                <>
+                  <span className={`block truncate ${selected ? 'font-bold' : ''}`}>
+                    {item.name}
+                  </span>
+                </>
+              )}
+            </Listbox.Option>
+          ))}
+        </Listbox.Options>
       </div>
     </Listbox>
   );
