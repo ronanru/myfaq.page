@@ -65,6 +65,7 @@ const Dashboard: NextPage = () => {
           <meta name="og:title" content="Dashboard | My FAQ Page" />
           <meta name="description" content="Set up your own FAQ page" />
           <meta name="og:description" content="Set up your own FAQ page" />
+          <link rel="canonical" href="https://myfaq.page/dashboard" />
         </Head>
         {settings.isLoading || questions.isLoading ? (
           <Loading></Loading>

@@ -17,6 +17,7 @@ export const getStaticProps = async (ctx: GetStaticPathsContext) => {
         isNumbered: true,
         theme: true,
         name: true,
+        username: true,
         questions: {
           select: {
             answer: true,
@@ -54,6 +55,7 @@ const FAQPage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
           name="og:description"
           content={`Find answers to questions ${page.name} gets the most often. Powered by My FAQ Page`}
         />
+        <link rel="canonical" href={`https://myfaq.page/${page.username}`} />
         {page.name && page.image && (
           <>
             <meta name="twitter:card" content="summary_large_image" />

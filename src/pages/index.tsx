@@ -15,6 +15,18 @@ const Home: NextPage = () => {
     const [isSignInModalOpen, setIsSignInModalOpen] = useState(false);
     return (
       <>
+        <Head>
+          <title>My FAQ Page - Answer all questions with one link</title>
+          <meta name="description" content="Create a beautiful FAQ page in under 5 minutes." />
+          <meta name="og:description" content="Create a beautiful FAQ page in under 5 minutes." />
+          <meta name="og:title" content="My FAQ Page - Answer all questions with one link" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="og:image" content="/og.png" />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+          <link rel="canonical" href="https://myfaq.page" />
+        </Head>
         <Modal isOpen={isSignInModalOpen} onClose={() => setIsSignInModalOpen(false)}>
           <button
             className="flex w-full items-center justify-center gap-4 rounded-lg bg-[#5865F2] p-4 text-white shadow"
@@ -43,17 +55,6 @@ const Home: NextPage = () => {
           </button>
         </Modal>
         <Layout center={false} onSignIn={() => setIsSignInModalOpen(true)}>
-          <Head>
-            <title>My FAQ Page - Answer all questions with one link</title>
-            <meta name="description" content="Create a beautiful FAQ page in under 5 minutes." />
-            <meta name="og:description" content="Create a beautiful FAQ page in under 5 minutes." />
-            <meta name="og:title" content="My FAQ Page - Answer all questions with one link" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="og:image" content="/og.png" />
-            <meta property="og:image:type" content="image/png" />
-            <meta property="og:image:width" content="1200" />
-            <meta property="og:image:height" content="630" />
-          </Head>
           <HeroSection onSignIn={() => setIsSignInModalOpen(true)}></HeroSection>
           <AboutSection></AboutSection>
           <DemoSection></DemoSection>
