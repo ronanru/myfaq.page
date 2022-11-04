@@ -13,21 +13,21 @@ const Layout: React.FC<{ children: React.ReactNode; center: boolean; onSignIn?: 
   return (
     <>
       <header className="container flex items-center justify-between p-4">
-        <Link href="/">
-          <a className="rounded-md text-2xl font-bold"> My FAQ Page</a>
+        <Link href="/" className="rounded-md text-2xl font-bold">
+          My FAQ Page
         </Link>
         {router.pathname === '/' ? (
           <>
             {session.status === 'unauthenticated' && <button onClick={onSignIn}>Sign In</button>}
             {session.status === 'authenticated' && (
-              <Link href="/dashboard">
-                <a className="rounded">Dashboard</a>
+              <Link href="/dashboard" className="rounded">
+                Dashboard
               </Link>
             )}
           </>
         ) : (
-          <Link href="/">
-            <a className="rounded">Home</a>
+          <Link href="/" className="rounded">
+            Home
           </Link>
         )}
       </header>
@@ -37,8 +37,7 @@ const Layout: React.FC<{ children: React.ReactNode; center: boolean; onSignIn?: 
         }`}>
         {children}
       </main>
-      <footer className="container flex justify-between p-4">
-        <p>© My FAQ Page 2022</p>
+      <footer className="container flex flex-wrap justify-around gap-4 p-4 text-center">
         <p>
           Developed by{' '}
           <a
@@ -48,6 +47,18 @@ const Layout: React.FC<{ children: React.ReactNode; center: boolean; onSignIn?: 
             rel="noopener noreferrer">
             Ronan
           </a>
+          .
+        </p>{' '}
+        <p>
+          Open Source on{' '}
+          <a
+            className="rounded text-black underline"
+            href="https://github.com/ronanru/myfaq.page"
+            target="_blank"
+            rel="noopener noreferrer">
+            GitHib
+          </a>
+          .
         </p>
       </footer>
     </>

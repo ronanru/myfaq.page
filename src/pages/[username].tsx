@@ -95,8 +95,8 @@ const FAQPage = ({ page }: InferGetStaticPropsType<typeof getStaticProps>) => {
         </main>
         <footer className="p-4 text-center">
           Powered by{' '}
-          <Link href="/">
-            <a className="underline">My FAQ Page</a>
+          <Link href="/" className="underline">
+            My FAQ Page
           </Link>
         </footer>
       </div>

@@ -78,8 +78,8 @@ const Home: NextPage = () => {
           </p>
           <div className="flex items-center justify-center gap-4 md:justify-start">
             {session.status === 'authenticated' ? (
-              <Link href="/dashboard">
-                <a className="btn">Go to Dashboard</a>
+              <Link href="/dashboard" className="btn">
+                Go to Dashboard
               </Link>
             ) : (
               <button className="btn" onClick={onSignIn}>
