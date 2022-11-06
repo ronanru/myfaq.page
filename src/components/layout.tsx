@@ -56,7 +56,7 @@ const Layout: React.FC<{ children: React.ReactNode; center: boolean; onSignIn?: 
             href="https://github.com/ronanru/myfaq.page"
             target="_blank"
             rel="noopener noreferrer">
-            GitHib
+            GitHub
           </a>
           .
         </p>
