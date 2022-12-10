@@ -598,6 +598,7 @@ const Dashboard: NextPage = () => {
         <div className="focus-outline group rounded-lg bg-neutral-200 focus-within:outline">
           <div className="flex items-center border-b border-neutral-500">
             <button
+              type="button"
               title="Toggle Bold"
               className={`flex h-7 w-7 items-center justify-center rounded-tl-lg font-bold${
                 editor.isActive('bold') ? ' bg-neutral-300' : ''
@@ -608,6 +609,7 @@ const Dashboard: NextPage = () => {
             </button>
             <button
               title="Toggle Italic"
+              type="button"
               className={`flex h-7 w-7 items-center justify-center italic${
                 editor.isActive('italic') ? ' bg-neutral-300' : ''
               }`}
@@ -617,6 +619,7 @@ const Dashboard: NextPage = () => {
             </button>
             <button
               title="Toggle Underline"
+              type="button"
               className={`flex h-7 w-7 items-center justify-center underline${
                 editor.isActive('underline') ? ' bg-neutral-300' : ''
               }`}
@@ -626,6 +629,7 @@ const Dashboard: NextPage = () => {
             </button>
             <button
               title="Toggle Strike"
+              type="button"
               className={`flex h-7 w-7 items-center justify-center line-through${
                 editor.isActive('strike') ? ' bg-neutral-300' : ''
               }`}
@@ -635,6 +639,7 @@ const Dashboard: NextPage = () => {
             </button>
             <button
               title="Toggle Code"
+              type="button"
               className={`flex h-7 w-7 items-center justify-center${
                 editor.isActive('code') ? ' bg-neutral-300' : ''
               }`}
@@ -645,6 +650,7 @@ const Dashboard: NextPage = () => {
             <button
               title="Toggle Link"
               onClick={setLink}
+              type="button"
               className={`flex h-7 w-7 items-center justify-center${
                 editor.isActive('link') ? ' bg-neutral-300' : ''
               }`}>
