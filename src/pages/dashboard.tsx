@@ -587,7 +587,9 @@ const Dashboard: NextPage = () => {
         const url = prompt('URL', editor.getAttributes('link').href);
         if (url === null) return;
         if (url === '') return editor.chain().focus().extendMarkRange('link').unsetLink().run();
-        editor.chain().focus().extendMarkRange('link').setLink({ href: url }).run();
+        if (url.startsWith('https://') || url.startsWith('http://'))
+          return editor.chain().focus().extendMarkRange('link').setLink({ href: url }).run();
+        alert('Links should start with https:// or http://');
       }, [editor]);
     if (!editor) return null;
     return (

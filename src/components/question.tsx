@@ -27,7 +27,11 @@ const Question: React.FC<{
         Paragraph,
         Underline,
         Strike,
-        Link,
+        Link.configure({
+          HTMLAttributes: {
+            class: 'underline'
+          }
+        }),
         Code,
         Bold,
         Italic
